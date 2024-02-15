@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+#story {
+    width: 80%;
+    margin: 20px auto;
+}
+
+button {
+    margin-top: 10px;
+}
+
+#scene1,
+#scene2,
+#scene3,
+#scene4 {
+    display: none;
+
+  }
+
+  }
+
+}

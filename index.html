@@ -1,0 +1,82 @@
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Story Adventure</title>
+          <style>
+              body {
+                  font-family: Arial, sans-serif;
+                  text-align: center;
+              }
+              button {
+                  margin-top: 10px;
+              }
+              img {
+                  max-width: 100%;
+                  height: auto;
+                  margin-bottom: 10px;
+              }
+          </style>
+          </head>
+          <body>
+          <div id="story">
+              <h1>Choose Your Own Adventure</h1>
+              <div id="scene1">
+                  <h2>Scene 1</h2>
+                  <img src="https://th.bing.com/th/id/R.7121f351fd74dec3407b6c9aec4b38e4?rik=eVDnuKYByRDugg&pid=ImgRaw" alt="Scene 1" style="max-width: 50%; height: auto;">
+                  <p>Welcome to the story! You find yourself standing at a crossroads. Which path will you take?</p>
+                  <button onclick="nextScene('a')">Go left</button>
+                  <button onclick="nextScene('b')">Go right</button>
+              </div>
+              <div id="scene2a" style="display: none;">
+                  <h2>Scene 2 - Left Path</h2>
+                  <img src="https://th.bing.com/th/id/R.488f1f6b32e053b1aa380c7b959ff1e5?rik=7q8rTpAg6h8DQw&pid=ImgRaw" alt="Left Path" style="max-width: 40%; height: auto;">
+                  <p>You chose to go left. You find yourself in a peaceful meadow. What will you do next?</p>
+                  <button onclick="nextScene('c')">Explore the meadow</button>
+                 <button onclick="nextScene('d')">Done for the day</button>
+              </div>
+              <div id="scene2b" style="display: none;">
+                  <h2>Scene 2 - Right Path</h2>
+                  <img src="https://th.bing.com/th/id/OIP.OSIFXymK6ZDm4LyeM-GIzgHaEK?rs=1&pid=ImgDetMain" alt="Right Path" style="max-width: 100%; height: auto;">
+                  <p>You chose to go right. You find yourself in a dark forest. What will you do next?</p>
+                  <button onclick="nextScene('e')">Explore the forest</button>
+                  <button onclick="nextScene('f')">Done for the day</button>
+              </div>
+              <div id="scene3" style="display: none;">
+                  <h2>Scene 3</h2>
+                  <img src="https://i.pinimg.com/originals/0b/35/c5/0b35c5f950c6e77ed19ed7ec8731bcfe.jpg" alt="Scene 3" style="max-width: 100%; height: auto;">
+                  <p>You encounter a dragon! What will you do?</p>
+                  <button onclick="nextScene('g')">Fight</button>
+                  <button onclick="nextScene('h')">Run away</button>
+              </div>
+              <div id="scene4" style="display: none;">
+                  <h2>Scene 4</h2>
+                  <img src="https://th.bing.com/th/id/R.01c60e0be9b74d57edb094d136210867?rik=%2f1UgYlx438B1OQ&pid=ImgRaw" alt="Scene 4" style="max-width: 50%; height: auto;">
+                  <p>Congratulations! You have completed the adventure.</p>
+              </div>
+          </div>
+
+          <script>
+              let currentScene = 'scene1';
+
+            function nextScene(choice) {
+                document.getElementById('scene1').style.display = 'none';
+                document.getElementById('scene2a').style.display = 'none';
+                document.getElementById('scene2b').style.display = 'none';
+                document.getElementById('scene3').style.display = 'none';
+                document.getElementById('scene4').style.display = 'none';
+
+                if (choice === 'a') {
+                    document.getElementById('scene2a').style.display = 'block';
+                } else if (choice === 'b') {
+                    document.getElementById('scene2b').style.display = 'block';
+                } else if (choice === 'c') {
+                    document.getElementById('scene3').style.display = 'block';
+                } else if (choice === 'd'||choice === 'e' || choice === 'f'||choice === 'g' || choice === 'h') {
+                    document.getElementById('scene4').style.display = 'block';
+                } 
+            }
+          </script>
+          </body>
+          </html>
